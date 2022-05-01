@@ -1,0 +1,27 @@
+.visit {
+    background-image: url('https://i.ibb.co/nRcgJBr/warehouse.jpg');
+    height: 70vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: overlay;
+}
+
+.btn-visit {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #ffffff;
+    font-size: 16px;
+    margin: 0;
+    padding: 12px 34px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-visit:hover {
+    color: rgb(0, 0, 0);
+    background-color: #ffffff;
+    transform: translateY(-2px);
+}
