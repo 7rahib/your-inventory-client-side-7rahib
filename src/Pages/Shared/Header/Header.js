@@ -7,7 +7,7 @@ const Header = () => {
         <div>
             <Navbar className='shadow' collapseOnSelect expand="lg" bg="light" variant="light">
                 <Container>
-                    <Navbar.Brand as={Link} to='/'>React-Bootstrap</Navbar.Brand>
+                    <Navbar.Brand as={Link} to='/'>YourInventory</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
