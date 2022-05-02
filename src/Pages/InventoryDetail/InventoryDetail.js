@@ -5,6 +5,7 @@ import useInventoryDetail from '../../hooks/useInventoryDetail';
 const InventoryDetail = () => {
     const { _id } = useParams();
     const [inventory] = useInventoryDetail(_id);
+    console.log(inventory)
 
     return (
         <div className='container'>

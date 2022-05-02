@@ -1,26 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import useInventory from '../../../hooks/useInventory';
 import Inventory from '../Inventory/Inventory';
 
 const Inventories = () => {
-    const [stocks, setStocks] = useState([])
-    useEffect(() => {
-        fetch('http://localhost:5000/inventory')
-            .then(res => res.json())
-            .then(data => setStocks(data))
-    }, [])
+    const [inventories] = useInventory()
+    const navigate = useNavigate();
+
+    const viewInventory = () => {
+        navigate('/inventory');
+    }
     return (
         <div className='container'>
             <div className='m-3'>
-                <h1 className='text-center'>Inventory {stocks.length}</h1>
+                <h1 className='text-center'>Top Inventory</h1>
                 <div className='row'>
                     {
-                        stocks.map(stock => <Inventory
-                            key={stock._id}
-                            stock={stock}
+                        inventories.slice(0, 6).map(inventory => <Inventory
+                            key={inventory._id}
+                            inventory={inventory}
                         ></Inventory>)
                     }
                 </div>
             </div>
+            <button onClick={viewInventory} className='btn btn-dark'>View All</button>
         </div>
     );
 };

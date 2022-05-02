@@ -2,8 +2,8 @@ import React from 'react';
 import { Card, CardGroup, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
-const Inventory = ({ stock }) => {
-    const { _id, name, about, price, quantity, company, picture } = stock;
+const Inventory = ({ inventory }) => {
+    const { _id, name, about, price, quantity, company, picture } = inventory;
     const navigate = useNavigate();
 
     const updateInventory = _id => {
