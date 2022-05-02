@@ -17,14 +17,14 @@ const Inventory = ({ stock }) => {
                     <Card.Body >
                         <Card.Title>{name}</Card.Title>
                         <Card.Text>Company: {company}</Card.Text>
-                        <Card.Text>Price: {price}</Card.Text>
-                        <Card.Text>Quantity: {quantity}</Card.Text>
+                        <Card.Text>Price: ${price}</Card.Text>
+                        <Card.Text>Quantity: {quantity} pieces</Card.Text>
                         <Card.Text>
                             {about}
                         </Card.Text>
 
                     </Card.Body>
-                    <Button onClick={() => updateInventory(_id)} className='w-50 mx-auto m-2' variant="primary">Update</Button>
+                    <Button onClick={() => updateInventory(_id)} className='w-50 mx-auto m-2' variant="dark">Update</Button>
                 </Card>
             </CardGroup>
         </div>
