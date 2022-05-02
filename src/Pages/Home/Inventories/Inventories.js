@@ -10,7 +10,7 @@ const Inventories = () => {
         navigate('/inventory');
     }
     return (
-        <div className='container'>
+        <div className='container mb-5'>
             <div className='m-3'>
                 <h1 className='text-center'>Top Inventory</h1>
                 <div className='row'>

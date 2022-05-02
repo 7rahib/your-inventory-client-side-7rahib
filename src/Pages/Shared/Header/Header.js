@@ -1,29 +1,41 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
+import { signOut } from 'firebase/auth';
+import CustomLink from '../CustomLink/CustomLink';
 
 const Header = () => {
+    const [user] = useAuthState(auth);
+
+    const handleSignOut = () => {
+        signOut(auth);
+    }
     return (
-        <div>
-            <Navbar className='shadow' collapseOnSelect expand="lg" bg="light" variant="light">
+        <>
+            <Navbar bg="light" collapseOnSelect expand="lg" sticky='top' variant="light">
                 <Container>
-                    <Navbar.Brand as={Link} to='/'>YourInventory</Navbar.Brand>
+                    <Navbar.Brand as={CustomLink} to="/">YourInventory</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link as={Link} to='/blogs'>Blogs</Nav.Link>
-                            <Nav.Link href="#pricing">Pricing</Nav.Link>
+                            <Nav.Link as={CustomLink} to="/inventory">Inventory</Nav.Link>
+                            <Nav.Link as={CustomLink} to="/blogs">Blogs</Nav.Link>
+                            <Nav.Link as={CustomLink} to="/about">About</Nav.Link>
                         </Nav>
                         <Nav>
-                            <Nav.Link href="#deets">More deets</Nav.Link>
-                            <Nav.Link eventKey={2} href="#memes">
-                                Dank memes
-                            </Nav.Link>
+                            {
+                                user ?
+                                    < button className='btn btn-link text-dark text-decoration-none' onClick={handleSignOut}>Log out</button>
+                                    : <Nav.Link eventKey={2} as={CustomLink} to="login">
+                                        Login
+                                    </Nav.Link>
+                            }
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-        </div>
+        </>
     );
 };
 
