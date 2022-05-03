@@ -1,8 +1,26 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
+import useInventory from '../../hooks/useInventory';
 
 const ManageInventories = ({ inventory }) => {
-    const { name, price, quantity, company } = inventory;
+    const [inventories, setInventories] = useInventory()
+    const { _id, name, price, quantity, company } = inventory;
+
+
+    const deleteItem = _id => {
+        const check = window.confirm('Do you really want to delete ?')
+        if (check) {
+            const url = `http://localhost:5000/inventory/${_id}`
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .them(data => {
+                    const inventoriesLeft = inventories.filter(inventory => inventory._id !== _id)
+                    setInventories(inventoriesLeft)
+                })
+        }
+    }
     return (
         <div className='col col-lg-4 my-2'>
             <Card className='shadow'>
@@ -15,7 +33,7 @@ const ManageInventories = ({ inventory }) => {
                         <br />
                         Company: {company}
                     </Card.Text>
-                    <Button variant="dark">Delete</Button>
+                    <Button variant="dark" onClick={() => deleteItem(_id)}>Delete</Button>
                 </Card.Body>
             </Card>
 
