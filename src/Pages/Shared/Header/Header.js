@@ -19,15 +19,27 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link as={CustomLink} to="/inventory">Inventory</Nav.Link>
                             <Nav.Link as={CustomLink} to="/blogs">Blogs</Nav.Link>
-                            <Nav.Link as={CustomLink} to="/about">About</Nav.Link>
+                            {
+                                user &&
+                                <>
+                                    <Nav.Link eventKey={2} as={CustomLink} to="/inventory">
+                                        Manage Inventory
+                                    </Nav.Link>
+                                    <Nav.Link eventKey={2} as={CustomLink} to="/additem">
+                                        Add Item
+                                    </Nav.Link>
+                                    <Nav.Link eventKey={2} as={CustomLink} to="/myitems">
+                                        My Items
+                                    </Nav.Link>
+                                </>
+                            }
                         </Nav>
                         <Nav>
                             {
                                 user ?
                                     < button className='btn btn-link text-dark text-decoration-none' onClick={handleSignOut}>Log out</button>
-                                    : <Nav.Link eventKey={2} as={CustomLink} to="login">
+                                    : <Nav.Link eventKey={2} as={CustomLink} to="/login">
                                         Login
                                     </Nav.Link>
                             }

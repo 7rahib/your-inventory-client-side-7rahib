@@ -22,7 +22,7 @@ const Inventories = () => {
                     }
                 </div>
             </div>
-            <button onClick={viewInventory} className='btn btn-dark'>View All</button>
+            <button onClick={viewInventory} className='btn btn-dark'>Manage Inventory</button>
         </div>
     );
 };
