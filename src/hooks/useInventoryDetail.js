@@ -9,7 +9,7 @@ const useInventoryDetail = _id => {
             .then(res => res.json())
             .then(data => setInventory(data))
 
-    }, [_id])
+    }, [_id, inventory])
 
     return [inventory]
 }
