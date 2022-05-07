@@ -1,8 +1,9 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const InventoryDetail = () => {
+    const navigate = useNavigate();
     const { _id } = useParams();
     const [inventory, setInventory] = useState([])
     const [reload, setReload] = useState(0)
@@ -58,10 +59,17 @@ const InventoryDetail = () => {
         event.target.reset();
     }
 
+    const viewInventory = () => {
+        navigate('/inventory');
+    }
+
     return (
         <div className='container'>
             <div>
-                <h3 className='my-5 text-center'>Update Inventory</h3>
+                <h3 className='my-2 text-center'>Update Inventory</h3>
+                <div className='d-flex justify-end my-1'>
+                    <button onClick={viewInventory} className='btn btn-dark'>Manage Inventory</button>
+                </div>
                 <div className="card my-5">
                     <div className="row g-0">
                         <div className="col-md-4">
@@ -78,17 +86,21 @@ const InventoryDetail = () => {
                             <button onClick={handleDelivery} className='btn btn-dark ms-3'>Delivered</button>
 
                             <form onSubmit={handleNewQuantity}>
-                                <label className='form-label'>
-                                    New Quantity:
-                                    <input className='ms-2 w-50 form-control' name='quantity' />
-                                    <input className='btn btn-dark' type="submit" value="Update" />
+                                <label className='ms-3 form-label'>
+                                    Restock the item:
+                                    <div className=' d-flex'>
+                                        <input className='w-50 form-control' name='quantity' placeholder='Amount' />
+                                        <input className='btn btn-dark ms-3' type="submit" value="Restock" />
+                                    </div>
                                 </label>
+
                             </form>
                         </div>
 
                     </div>
                 </div>
             </div>
+
         </div >
     );
 };
