@@ -24,8 +24,8 @@ const AllMyItems = ({ myItem }) => {
 
 
     return (
-        <div>
-            <Card className='shadow'>
+        <div className='col col-lg-6'>
+            <Card className='shadow-sm my-3'>
                 <Card.Body>
                     <Card.Title>Product: {name}</Card.Title>
                     <Card.Text>

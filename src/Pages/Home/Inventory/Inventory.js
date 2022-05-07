@@ -11,7 +11,7 @@ const Inventory = ({ inventory }) => {
     }
     return (
         <div className='col col-lg-4 my-3'>
-            <CardGroup className='d-flex h-100'>
+            <CardGroup className='d-flex h-100 shadow rounded'>
                 <Card>
                     <Card.Img variant="top" src={picture} width='160' height='281' fluid />
                     <Card.Body >
@@ -22,11 +22,11 @@ const Inventory = ({ inventory }) => {
                         <Card.Text>
                             {about}
                         </Card.Text>
-
                     </Card.Body>
                     <Button onClick={() => updateInventory(_id)} className='w-50 mx-auto m-2' variant="dark">Update</Button>
                 </Card>
             </CardGroup>
+
         </div>
     );
 };

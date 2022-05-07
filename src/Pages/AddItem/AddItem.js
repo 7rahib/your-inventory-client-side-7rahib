@@ -1,12 +1,15 @@
 import axios from 'axios';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../firebase.init';
 
 
 const AddItem = () => {
     const [user] = useAuthState(auth);
+    const navigate = useNavigate();
+
     const handleAddNewItem = event => {
         event.preventDefault();
         const newItem = {
@@ -23,9 +26,11 @@ const AddItem = () => {
                 const { data } = response;
                 if (data.insertedId) {
                     toast('You just added a new item');
+                    navigate('/inventory');
                     event.target.reset();
                 }
             })
+
 
     }
 

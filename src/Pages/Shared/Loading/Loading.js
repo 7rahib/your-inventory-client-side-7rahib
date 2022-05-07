@@ -1,10 +1,11 @@
 import React from 'react';
-import { Spinner } from 'react-bootstrap';
 
 const Loading = () => {
     return (
-        <div style={{ height: '300px' }} className='w-100 d-flex justify-content-center align-items-center'>
-            <Spinner animation="border" variant="dark" />
+        <div class="flex justify-center items-center mt-10">
+            <div class="spinner-grow inline-block w-8 h-8 bg-current rounded-full opacity-0" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
         </div>
     );
 };

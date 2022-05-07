@@ -5,9 +5,8 @@ import { useParams } from 'react-router-dom';
 const InventoryDetail = () => {
     const { _id } = useParams();
     const [inventory, setInventory] = useState([])
-    const [del, setDel] = useState(0)
+    const [reload, setReload] = useState(0)
     const [quantity, setQuantity] = useState(0)
-    console.log(quantity)
 
     useEffect(() => {
         const url = `http://localhost:5000/inventory/${_id}`
@@ -18,15 +17,14 @@ const InventoryDetail = () => {
                 setQuantity(inventory.quantity)
             })
 
-    }, [del])
+    }, [reload])
 
     const handleDelivery = () => {
         const quantity = inventory.quantity
         const newQuantity = { quantity: quantity - 1 }
-        console.log(newQuantity)
         const url = `http://localhost:5000/inventory/${_id}`
         axios.put(url, newQuantity)
-        setDel(del + 1)
+        setReload(reload + 1)
     }
 
 
@@ -54,10 +52,10 @@ const InventoryDetail = () => {
         const quantity = inventory.quantity
         const newQuantityValue = event.target.quantity.value;
         const newQuantity = { quantity: parseInt(quantity) + parseInt(newQuantityValue) }
-        console.log(newQuantity)
         const url = `http://localhost:5000/inventory/${_id}`
         axios.put(url, newQuantity)
-        setDel(del + 1)
+        setReload(reload + 1)
+        event.target.reset();
     }
 
     return (
@@ -74,7 +72,7 @@ const InventoryDetail = () => {
                                 <h5 className="card-title">{inventory.name}</h5>
                                 <p className="card-text">Company: {inventory.company}</p>
                                 <p className="card-text">Price: ${inventory.price}</p>
-                                <p className="card-text">Quantity: {del > 0 ? quantity : inventory.quantity} pieces</p>
+                                <p className="card-text">Quantity: {reload > 0 ? quantity : inventory.quantity} pieces</p>
                                 <p className="card-text">{inventory.about}</p>
                             </div>
                             <button onClick={handleDelivery} className='btn btn-dark ms-3'>Delivered</button>

@@ -1,4 +1,3 @@
-import "@material-tailwind/react/tailwind.css";
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import AddItem from './Pages/AddItem/AddItem';

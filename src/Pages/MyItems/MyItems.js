@@ -14,8 +14,7 @@ const MyItems = () => {
             setMyItems(data)
         }
         getOrders()
-    }, [user])
-    console.log(myItems)
+    }, [user, myItems])
     return (
         <div className='container'>
             <h3 className='text-center'>My Items</h3>
