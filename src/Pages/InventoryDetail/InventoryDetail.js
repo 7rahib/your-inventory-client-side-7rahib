@@ -29,25 +29,6 @@ const InventoryDetail = () => {
     }
 
 
-
-    // const handleDelivery = event => {
-    //     event.preventDefault();
-    //     const url = `https://damp-eyrie-36624.herokuapp.com/inventory/${_id}`
-    //     fetch(url, {
-    //         method: 'PUT',
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: ('user')
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             console.log('Success', data)
-    //             alert('User Added')
-    //             event.target.reset()
-    //         })
-    // }
-
     const handleNewQuantity = event => {
         event.preventDefault()
         const quantity = inventory.quantity
