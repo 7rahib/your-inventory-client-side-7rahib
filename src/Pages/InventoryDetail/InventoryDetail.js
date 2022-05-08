@@ -20,7 +20,7 @@ const InventoryDetail = () => {
 
     }, [reload, inventory])
 
-    const handleDelivery = () => {
+    const handleDeliver = () => {
         const quantity = inventory.quantity
         const newQuantity = { quantity: quantity - 1 }
         const url = `https://damp-eyrie-36624.herokuapp.com/inventory/${_id}`
@@ -83,7 +83,7 @@ const InventoryDetail = () => {
                                 <p className="card-text">Quantity: {reload > 0 ? quantity : inventory.quantity} pieces</p>
                                 <p className="card-text">{inventory.about}</p>
                             </div>
-                            <button onClick={handleDelivery} className='btn btn-dark ms-3'>Delivered</button>
+                            <button onClick={handleDeliver} className='btn btn-dark ms-3'>Delivered</button>
 
                             <form onSubmit={handleNewQuantity}>
                                 <label className='ms-3 form-label'>
