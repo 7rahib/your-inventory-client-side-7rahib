@@ -21,7 +21,7 @@ const AddItem = () => {
             quantity: event.target.quantity.value,
             about: event.target.about.value,
         }
-        axios.post('http://localhost:5000/inventory', newItem)
+        axios.post('https://damp-eyrie-36624.herokuapp.com/inventory', newItem)
             .then(response => {
                 const { data } = response;
                 if (data.insertedId) {

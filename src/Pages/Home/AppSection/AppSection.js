@@ -3,7 +3,7 @@ import './AppSection.css'
 
 const AppSection = () => {
     return (
-        <div className='my-4'>
+        <div className='mt-5'>
             <h3 className='text-center my-3'>Other platforms</h3>
             <div className="app-section" id="app-section">
                 <div className="container h-100 ">

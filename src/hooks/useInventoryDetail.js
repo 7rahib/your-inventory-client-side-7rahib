@@ -4,7 +4,7 @@ const useInventoryDetail = _id => {
     const [inventory, setInventory] = useState({})
 
     useEffect(() => {
-        const url = `http://localhost:5000/inventory/${_id}`
+        const url = `https://damp-eyrie-36624.herokuapp.com/inventory/${_id}`
         fetch(url)
             .then(res => res.json())
             .then(data => setInventory(data))

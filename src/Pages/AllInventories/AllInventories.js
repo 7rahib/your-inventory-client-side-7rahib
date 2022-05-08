@@ -9,14 +9,14 @@ const AllInventories = () => {
     const [inventories, setInventories] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/inventory?page=${page}&size=${size}`)
+        fetch(`https://damp-eyrie-36624.herokuapp.com/inventory?page=${page}&size=${size}`)
             .then(res => res.json())
             .then(data => setInventories(data))
-    }, [page, size])
+    }, [inventories, page, size])
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/inventorycount')
+        fetch('https://damp-eyrie-36624.herokuapp.com/inventorycount')
             .then(res => res.json())
             .then(data => {
                 const count = data.count

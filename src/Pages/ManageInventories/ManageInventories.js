@@ -10,7 +10,7 @@ const ManageInventories = ({ inventory }) => {
     const deleteItem = _id => {
         const check = window.confirm('Do you really want to delete ?')
         if (check) {
-            const url = `http://localhost:5000/inventory/${_id}`
+            const url = `https://damp-eyrie-36624.herokuapp.com/inventory/${_id}`
             fetch(url, {
                 method: 'DELETE'
             })

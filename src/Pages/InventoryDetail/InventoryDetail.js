@@ -10,7 +10,7 @@ const InventoryDetail = () => {
     const [quantity, setQuantity] = useState(0)
 
     useEffect(() => {
-        const url = `http://localhost:5000/inventory/${_id}`
+        const url = `https://damp-eyrie-36624.herokuapp.com/inventory/${_id}`
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -18,12 +18,12 @@ const InventoryDetail = () => {
                 setQuantity(inventory.quantity)
             })
 
-    }, [reload])
+    }, [reload, inventory])
 
     const handleDelivery = () => {
         const quantity = inventory.quantity
         const newQuantity = { quantity: quantity - 1 }
-        const url = `http://localhost:5000/inventory/${_id}`
+        const url = `https://damp-eyrie-36624.herokuapp.com/inventory/${_id}`
         axios.put(url, newQuantity)
         setReload(reload + 1)
     }
@@ -32,7 +32,7 @@ const InventoryDetail = () => {
 
     // const handleDelivery = event => {
     //     event.preventDefault();
-    //     const url = `http://localhost:5000/inventory/${_id}`
+    //     const url = `https://damp-eyrie-36624.herokuapp.com/inventory/${_id}`
     //     fetch(url, {
     //         method: 'PUT',
     //         headers: {
@@ -53,7 +53,7 @@ const InventoryDetail = () => {
         const quantity = inventory.quantity
         const newQuantityValue = event.target.quantity.value;
         const newQuantity = { quantity: parseInt(quantity) + parseInt(newQuantityValue) }
-        const url = `http://localhost:5000/inventory/${_id}`
+        const url = `https://damp-eyrie-36624.herokuapp.com/inventory/${_id}`
         axios.put(url, newQuantity)
         setReload(reload + 1)
         event.target.reset();
