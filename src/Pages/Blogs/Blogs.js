@@ -52,8 +52,8 @@ const Blogs = () => {
                     <Card.Body>
                         <blockquote className="blockquote mb-0">
                             <p>
-                                We use Nodejs in the server side. It is a Javascript runtime environment. It is basically Javascript that runs in the backend or the server-side. We use nodejs to create api and other functionalities to make backend work with the frontend. <br />
-                                Again, MongoDB is a NoSQL database. We use MongoDB as our primary database. Here, we are able to store our required informations and other things using its dynamic schema.
+                                JWT, or JSON Web Token, is an open standard used to share security information between two parties — a client and a server. Each JWT contains encoded JSON objects, including a set of claims. JWTs are signed using a cryptographic algorithm to ensure that the claims cannot be altered after the token is issued.
+                                The payload contains the claims. This is displayed as a JSON string, usually containing no more than a dozen fields to keep the JWT compact. This information is typically used by the server to verify that the user has permission to perform the action they are requesting. The party that creates the JWT signs the header and payload with a secret that is known to both the issuer and receiver, or with a private key known only to the sender. When the token is used, the receiving party verifies that the header and payload match the signature.
                             </p>
                         </blockquote>
                     </Card.Body>
