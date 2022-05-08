@@ -3,10 +3,10 @@ import { Card } from 'react-bootstrap';
 
 const Gallery = () => {
     return (
-        <div>
+        <div >
             <h3 className='text-center'>Our Services</h3>
-            <div className='row d-flex justify-content-center my-3 g-0'>
-                <Card className='col col-lg-3 shadow'>
+            <div className='row d-flex justify-content-center my-3 g-0 sm:mx-5'>
+                <Card className='col col-12 col-md-6 col-lg-3 shadow'>
                     <Card.Img variant="top" src="https://i.ibb.co/hKBjc6m/g3.jpg" />
                     <Card.Body>
                         <Card.Title>No more Checking</Card.Title>
@@ -15,7 +15,7 @@ const Gallery = () => {
                         </Card.Text>
                     </Card.Body>
                 </Card>
-                <Card className='col col-lg-3 mx-2 shadow'>
+                <Card className='col col-12 col-md-6 col-lg-3 mx-2 shadow'>
                     <Card.Img variant="top" src="https://i.ibb.co/QvH19Cf/g1.jpg" />
                     <Card.Body>
                         <Card.Title>Add Stock amount</Card.Title>
@@ -24,7 +24,7 @@ const Gallery = () => {
                         </Card.Text>
                     </Card.Body>
                 </Card>
-                <Card className='col col-lg-3 shadow'>
+                <Card className='col col-12 col-md-6 col-lg-3 shadow'>
                     <Card.Img variant="top" src="https://i.ibb.co/4tzmMbR/g2.jpg" />
                     <Card.Body>
                         <Card.Title>Distribution</Card.Title>

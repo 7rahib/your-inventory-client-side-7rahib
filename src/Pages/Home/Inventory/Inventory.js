@@ -10,7 +10,7 @@ const Inventory = ({ inventory }) => {
         navigate(`/inventory/${_id}`);
     }
     return (
-        <div className='col col-lg-4 my-3'>
+        <div className='col col-12 col-md-6 col-lg-4 my-3'>
             <CardGroup className='d-flex h-100 shadow rounded'>
                 <Card>
                     <Card.Img variant="top" src={picture} width='160' height='281' fluid />

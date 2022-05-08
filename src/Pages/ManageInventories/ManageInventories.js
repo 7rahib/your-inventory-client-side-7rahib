@@ -22,7 +22,7 @@ const ManageInventories = ({ inventory }) => {
         }
     }
     return (
-        <div className='col col-lg-4 my-2'>
+        <div className='col col-12 col-md-6 col-lg-4 my-2'>
             <Card className='shadow'>
                 <Card.Body>
                     <Card.Title>Product: {name}</Card.Title>
